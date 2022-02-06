@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+    <meta charset="utf-8">
     <!-- СКРИПТЫ -->
     <script defer src="scripts/config.js"></script>
     <script defer src="scripts/utils.js"></script>
@@ -14,13 +15,15 @@
     <title>OW3 official page</title>
 </head>
 <body>
-    <canvas id="canvas" ></canvas>
-    <div id="main_menu" >
-        <div class="menu_button" id="buttin_start_game" ></div>
-        <div class="menu_button" id="button_skills" ></div>
-        <div class="menu_button" id="button_settings" ></div>
-        <div class="menu_button" id="button_about" ></div>
-        <div class="menu_button" id="button_quit" ></div>
+    <div class="overlay">
+        <div id="main_menu" >
+            <div class="menu_button" id="buttin_start_game" ><span>Начать игру</span></div>
+            <div class="menu_button" id="button_skills" ><span>Умения</span></div>
+            <div class="menu_button" id="button_settings" ><span>Настройки</span></div>
+            <div class="menu_button" id="button_about" ><span>Авторы</span></div>
+            <div class="menu_button" id="button_quit" ><span>Выход</span></div>
+        </div>
     </div>
+    <canvas id="canvas" ></canvas>
 </body>
 </html>
