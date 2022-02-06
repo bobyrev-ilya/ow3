@@ -7,6 +7,9 @@ var imageLoaderList = [
 //глобальное хранилище загруженных картинок
 var imageStore;
 
+window.onload = function (e) {
+
+}
 //стартовый метод игры
 const startGame = () => {
 
