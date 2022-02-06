@@ -6,15 +6,58 @@ class Hero {
     height;
     x;
     y;
+    flip;
+    cooldown;
 
     constructor(name) {
         this.name = name;
-        this.width = ow3params.playerParams.width;
-        this.height = ow3params.playerParams.height;
+        this.cooldown = 0;
+        this.flip = 1;
     }
 
-    drawModel() {
-        ctx.drawImage(imageStore.get(this.name), this.x, this.y, this.width, this.height);
+    drawModel(){
+        if (this.flip == 1){
+            var tempCanvas = document.createElement("canvas"),
+              tCtx = tempCanvas.getContext("2d"); 
+              tempCanvas.height = 200;
+              tempCanvas.width = 200;
+              tCtx.height = HERO_HEIGHT;
+              tCtx.width = HERO_WIDTH;
+              //tCtx.scale(-1,1);
+              tCtx.drawImage(imageStore.get(this.name),
+              0,
+              0,
+              HERO_WIDTH,
+              HERO_HEIGHT);
+            ctx.drawImage(tempCanvas,
+            this.x,
+            this.y,
+            HERO_WIDTH,
+            HERO_HEIGHT);
+        } else if (this.flip == 0){
+            var tempCanvas = document.createElement("canvas"),
+            tCtx = tempCanvas.getContext("2d"); 
+            tempCanvas.height = 200;
+              tempCanvas.width = 200;
+            tCtx.height = HERO_HEIGHT;
+            tCtx.width = HERO_WIDTH;
+            tCtx.save();
+            //tCtx.translate(HERO_WIDTH/2,0)
+            tCtx.scale(-1,1);
+            tCtx.drawImage(imageStore.get(this.name),
+            0,
+            0,
+            -HERO_WIDTH,
+            HERO_HEIGHT);
+            tCtx.restore();
+            
+          ctx.drawImage(tempCanvas,
+          this.x,
+          this.y,
+          HERO_WIDTH,
+          HERO_HEIGHT);
+        }
+
     }
 
     create() {
