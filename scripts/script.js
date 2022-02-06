@@ -9,6 +9,10 @@ var ctx = canvas.getContext("2d");
 //параметры игры
 var HERO_WIDTH = 200;
 var HERO_HEIGHT = 200;
+var playerSpeed = 400;
+var gameTime = 0;
+var lastTime;
+
 
 //утилиты для игры
 //Возвращает картинку после ее полной загрузки (Promise)
@@ -28,3 +32,15 @@ var loadResourcesAndStartGame = (imageLoaderList, startCallback) => {
                 startCallback();
     });
 }
+
+
+var requestAnimFrame = (function(){
+    return window.requestAnimationFrame       ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame    ||
+        window.oRequestAnimationFrame      ||
+        window.msRequestAnimationFrame     ||
+        function(callback){
+            window.setTimeout(callback, 1000 / 60);
+        };
+})();
