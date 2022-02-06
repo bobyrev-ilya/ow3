@@ -1,13 +1,26 @@
 <!doctype html>
 <html>
 <head>
+    <!-- СКРИПТЫ -->
+    <script defer src="scripts/config.js"></script>
+    <script defer src="scripts/utils.js"></script>
     <script defer src="scripts/script.js"></script>
     <script defer src="scripts/models/hero.js"></script>
     <script defer src="scripts/game.js"></script>
-    <link rel="stylesheet" href="styles/main.css"></link>
+    <!-- СТИЛИ -->
+    <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="styles/ui.css"/>
+
     <title>OW3 official page</title>
 </head>
 <body>
     <canvas id="canvas" ></canvas>
+    <div id="main_menu" >
+        <div class="menu_button" id="buttin_start_game" ></div>
+        <div class="menu_button" id="button_skills" ></div>
+        <div class="menu_button" id="button_settings" ></div>
+        <div class="menu_button" id="button_about" ></div>
+        <div class="menu_button" id="button_quit" ></div>
+    </div>
 </body>
 </html>
