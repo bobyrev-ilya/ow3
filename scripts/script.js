@@ -1,9 +1,9 @@
 //настройки канваса
 var canvas = document.getElementById("canvas");
-canvas.width = 1280;
-canvas.height = 720;
+canvas.width = ow3params.viewportWidth;
+canvas.height = ow3params.viewportHeight;
 
-//иницализация контекста
+//инициализация контекста
 var ctx = canvas.getContext("2d");
 
 //параметры игры
@@ -32,15 +32,13 @@ var loadResourcesAndStartGame = (imageLoaderList, startCallback) => {
                 startCallback();
     });
 }
-
-
-var requestAnimFrame = (function(){
-    return window.requestAnimationFrame       ||
-        window.webkitRequestAnimationFrame ||
-        window.mozRequestAnimationFrame    ||
-        window.oRequestAnimationFrame      ||
-        window.msRequestAnimationFrame     ||
-        function(callback){
-            window.setTimeout(callback, 1000 / 60);
-        };
-})();
+    var requestAnimFrame = (function(){
+        return window.requestAnimationFrame       ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame    ||
+            window.oRequestAnimationFrame      ||
+            window.msRequestAnimationFrame     ||
+            function(callback){
+                window.setTimeout(callback, 1000 / 60);
+            };
+    })();

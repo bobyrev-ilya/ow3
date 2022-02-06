@@ -2,12 +2,14 @@ class Hero {
 
     _id;
     name;
+    width;
+    height;
     x;
     y;
     flip;
     cooldown;
 
-    constructor(name){
+    constructor(name) {
         this.name = name;
         this.cooldown = 0;
         this.flip = 1;
@@ -58,17 +60,17 @@ class Hero {
 
     }
 
-    create(){
-        this.x = (canvas.width - HERO_WIDTH)/2;
-        this.y = (canvas.height - HERO_HEIGHT)/2;
-        this.drawModel()
+    create() {
+        this.x = (canvas.width - this.width)/2;
+        this.y = (canvas.height - this.height)/2;
+        this.drawModel();
     }
 
-    changePosition(){
+    changePosition() {
 
     }
 
-    attack(){
+    attack() {
 
     }
 }

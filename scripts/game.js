@@ -15,6 +15,9 @@ var bulletArr = [];
 var trashArr = []
 
 
+window.onload = function (e) {
+
+}
 //стартовый метод игры
 const startGame = () => {
 
