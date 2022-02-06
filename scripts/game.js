@@ -10,8 +10,10 @@ var imageStore;
 //стартовый метод игры
 const startGame = () => {
 
-    console.log("Start game")
-
+    console.log("Start game");
+    var bg = new Background("gross");
+    bg.create();
+    console.log(bg);
     var hero = new Hero("torb");
     hero.create();
     console.log(hero);

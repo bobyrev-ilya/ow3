@@ -5,13 +5,10 @@ canvas.height = 720;
 
 //иницализация контекста
 var ctx = canvas.getContext("2d");
-ctx.fillStyle = "silver";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 //параметры игры
 var HERO_WIDTH = 200;
 var HERO_HEIGHT = 200;
-
 
 //утилиты для игры
 //Возвращает картинку после ее полной загрузки (Promise)
