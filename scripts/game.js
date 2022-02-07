@@ -7,17 +7,19 @@ var imageLoaderList = [
 //глобальное хранилище загруженных картинок
 var imageStore;
 
-window.onload = function (e) {
 
-}
 //стартовый метод игры
 const startGame = () => {
 
-    console.log("Start game")
+    //контекст
+    var ctx = setUpEnviroment();
 
-    var hero = new Hero("torb");
-    hero.create();
-    console.log(hero);
+    //отрисовщик объектов
+    const renderer = Renderer(ctx, imageStore); // инициализация отрисовщика
+
+    //Запуск игры
+    GameEngine(renderer).start();
+
 }
 
 //инициализация imageStore и дальнейший старт игры

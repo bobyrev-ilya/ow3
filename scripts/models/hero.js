@@ -13,14 +13,10 @@ class Hero {
         this.height = ow3params.playerParams.height;
     }
 
-    drawModel() {
-        ctx.drawImage(imageStore.get(this.name), this.x, this.y, this.width, this.height);
-    }
-
     create() {
         this.x = (canvas.width - this.width)/2;
         this.y = (canvas.height - this.height)/2;
-        this.drawModel();
+        console.table(this);
     }
 
     changePosition() {
