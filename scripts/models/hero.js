@@ -9,18 +9,18 @@ class Hero {
 
     constructor(name) {
         this.name = name;
-        this.width = ow3params.playerParams.width;
-        this.height = ow3params.playerParams.height;
+        this.width = config.playerParams.width;
+        this.height = config.playerParams.height;
     }
 
     create() {
-        this.x = (canvas.width - this.width)/2;
-        this.y = (canvas.height - this.height)/2;
         console.table(this);
+        return this;
     }
 
-    changePosition() {
-
+    setPosition(x, y) {
+        this.x = x;
+        this.y = y;
     }
 
     attack() {

@@ -1,7 +1,15 @@
-const Renderer = (ctx, imageStore) => {
+const Renderer = (canvas, imageStore) => {
 
+    //инициализация контекста
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "silver";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     return{
+
+        getCanvas(){
+            return canvas;
+        },
 
         //отрисовка объекта (? extends Hero)
         drawObject(object) {

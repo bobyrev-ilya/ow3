@@ -11,11 +11,11 @@ var imageStore;
 //стартовый метод игры
 const startGame = () => {
 
-    //контекст
-    var ctx = setUpEnviroment();
+    //канвас
+    var canvas = setUpEnviroment();
 
     //отрисовщик объектов
-    const renderer = Renderer(ctx, imageStore); // инициализация отрисовщика
+    const renderer = Renderer(canvas, imageStore); // инициализация отрисовщика
 
     //Запуск игры
     GameEngine(renderer).start();
